@@ -1,0 +1,120 @@
+body {
+    background-color: rgb(58,58,58);
+    font-family: 'RobotoDraft', 'Roboto', sans-serif;
+}
+
+button {
+    background-color: rgb(43,43,43);
+    border: none;
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+}
+
+button:hover {
+    background-color: rgb(50,50,50);
+}
+
+input {
+    background-color: rgb(44,44,44);
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    color: rgb(203,203,203);
+    font-size: 16px;
+    text-align: center;
+    width: 140px;
+}
+
+#container-left-bar {
+    position: fixed;
+    background-color: rgb(35,35,35);
+    padding-top: 50px;
+    width: 50px;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+#container-iterations {
+    position: fixed;
+    left: 50px;
+    top: 0px;
+    width: calc(100% - 50px);
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgb(58,58,58);
+    padding-top: 15px;
+}
+
+
+
+#small-text {
+    font-size: 20px;
+    color: rgb(203,203,203);
+}
+
+#iterations {
+    width: 250px;
+    color: rgb(203,203,203);
+}
+
+#container-advanced {
+    position: fixed;
+    top: 20%;
+    left: 10%;
+    width: 80%;
+    height: 60%;
+    background-color:rgb(66,66,66);
+    display: none;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+/* TOOLTIP */
+
+.tooltip {
+    position: relative;
+    margin-top: 5px;
+    background-color:rgb(43,43,43);
+    padding: 5px;
+    color: rgb(195,195,195);
+    font-size: 40px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+}
+
+.tooltip:hover {
+    background-color: rgb(66,66,66);
+}
+
+.tooltiptext {
+    font-size: 20px;
+    background-color: lightgrey;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    max-width: 300px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+

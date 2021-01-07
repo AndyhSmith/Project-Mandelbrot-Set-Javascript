@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Meta Tags -->
+	<meta charset="UTF-8">
+ 	<meta name="description" content="JS Mandelbrot Generator">
+ 	<meta name="keywords" content="JavaScript, HTML5, Mandelbrot, Animation, experiment">
+ 	<meta name="author" content="Andy Smith">
+	<meta name="viewport" content="width=device-width, initial-scale=0.6, user-scalable=no">
+	
+	<!-- Set Up -->
+	<title>JS Mandelbrot Generator</title>
+	
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+	<script src="https://kit.fontawesome.com/68a99d09f4.js" crossorigin="anonymous"></script>
+	<link type="text/css" rel="stylesheet" href="index.css"></link>
+</head>
+
+<body>
+	<div id="center">
+		<script src="projectMandelbrot.js" async></script>
+		<script src="p5/p5.js"></script>
+		<div id="myContainer"></div>
+	</div>
+
+
+	<div id="container-left-bar">
+		<a href="andyhsmith.com"><div class="tooltip">
+			<i class="fas fa-arrow-left"></i>
+			<span class="tooltiptext">andyhsmith.com</span>
+		</div></a>
+		<div class="tooltip" onclick="reset()">
+			<i class="fas fa-power-off"></i>
+			<span class="tooltiptext">Reset</span>
+		</div>
+		<div class="tooltip" onclick="refresh()">
+			<i class="fas fa-redo-alt"></i>
+			<span class="tooltiptext">Refresh</span>
+		</div>
+		<div class="tooltip" onclick="zoomIn()" id="zoomInID">
+			<i class="fas fa-search-plus"></i>
+			<span class="tooltiptext">Zoom In</span>
+		</div>
+		<div class="tooltip" onclick="zoomOut()" id="zoomOutID">
+			<i class="fas fa-search-minus"></i>
+			<span class="tooltiptext">Zoom Out</span>
+		</div>
+		<div class="tooltip" onclick="pan()" id="panID">
+			<i class="fas fa-arrows-alt"></i>
+			<span class="tooltiptext">Pan Around</span>
+		</div>
+		<div class="tooltip" onclick="zoomCenter()">
+			<i class="far fa-dot-circle"></i>
+			<span class="tooltiptext">Auto Zoom</span>
+		</div>
+		<div class="tooltip" onclick="downloadPNG()">
+			<i class="fas fa-arrow-down"></i>
+			<span class="tooltiptext">Download</span>
+		</div>
+		<div class="tooltip" onclick="showAdvanced()">
+			<i class="fas fa-sliders-h"></i>
+			<span class="tooltiptext">Advanced Settings</span>
+		</div>
+	</div>	
+
+	<div id="container-advanced">
+		<button onclick="hideAdvanced()">
+			CLOSE
+		</button>
+	
+		<br>
+		
+		The animator will zoom in or out of the center of the mandelbrot scene using the zoom amount specified below.<br>
+		<br>
+		<span style="color:rgb(174,132,33)">Make sure you have zoom in/out selected on the left bar. </span><br>
+		
+		Zoom Amount
+		<input type="text" id="zoomAmount" value="2">
+		<br>
+		Animation Frames
+		<input type="text" id="animationFrames" value="3"> 
+		<br>
+		Animation Progress
+		<input type="text" id="animationProgress" value="N/A" readonly>
+		<br>
+		
+		<span style="color:rgb(174,132,33)">Once the animation process has begun currently the only way to stop it is to refresh or close the page. </span><br>
+		<button class="psb" onclick="animateZoom()">Animate</button><br>
+			
+		<br>
+		Canvas Width 
+		<input type="text" id="canvas-width" value="500">
+		Canvas Height 
+		<input type="text" id="canvas-height" value="500">
+	</div>
+
+	<div id="container-iterations">
+		<span id="small-text">Iterations:</span>
+		<input type="text" id="numberOfIterations" value="100">  &nbsp;&nbsp;| &nbsp;&nbsp;
+		<span id="small-text">Filename:</span>   
+		<input type="text" id="downloadName" value="Mandelbrot">
+	</div>
+	
+
+</body>
+</html>
