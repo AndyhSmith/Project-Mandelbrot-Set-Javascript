@@ -1,10 +1,10 @@
 //User Values
-var zoomAmount = 2;
+var zoomAmount = 1;
 
 //Declerations
 var xPos = 0
-var newCanvasHeight = screen.height / 2.5; //500;
-var newCanvasWidth = screen.width / 2.5; //500;
+var newCanvasHeight = 500; //screen.height / 2.5; //500;
+var newCanvasWidth = 500; //screen.width / 2.5; //500;
 var xUpperRange = newCanvasWidth / 100;
 var xLowerRange = -newCanvasWidth / 100;
 var yUpperRange = newCanvasHeight / 100;
@@ -51,18 +51,24 @@ function setup() {
 	draw();
 	
 	// document.getElementById("defaultCanvas0").width = 1000;
-	document.getElementById("defaultCanvas0").style.width = window.innerWidth + "px";
-	document.getElementById("defaultCanvas0").style.height = window.innerHeight + "px";
+	newCanvasHeight = document.getElementById("canvas-height").value;
+	newCanvasWidth = document.getElementById("canvas-width").value;
+	document.getElementById("defaultCanvas0").style.width = newCanvasWidth + "px"// window.innerWidth + "px";
+	document.getElementById("defaultCanvas0").style.height = newCanvasHeight + "px" //window.innerHeight + "px";
 	document.getElementById("defaultCanvas0").style.position = "fixed";
 	document.getElementById("defaultCanvas0").style.left = "50px";
 	document.getElementById("defaultCanvas0").style.top = "0px";
 	console.log(document.getElementById("defaultCanvas0"));
+	document.getElementById("defaultCanvas0").addEventListener("click", mandelbrotUpdate);
 	// $("#defaultCanvas0").css({ 'height': "720px" });
 	// $("#defaultCanvas0").css({ 'width': "1080px" });
 }
 
 function mandelbrotUpdate() {
-	if (mouseX > 50 && mouseY > 50 && !showAdvancedToggle) {
+	
+	if ((mouseX > 50) && (mouseX < newCanvasWidth + 50) && (mouseY > 50) && (mouseY < newCanvasHeight + 50) && !showAdvancedToggle) {
+		console.log("MouseX:" + mouseX)
+		console.log("newCanvasWidth:" + newCanvasWidth)
 		xPos = map(mouseX, 0, width, xLowerRange, xUpperRange );
 		yPos = map(mouseY, 0, height, yLowerRange, yUpperRange );
 		
@@ -105,13 +111,15 @@ function zoomCenter() {
 	redraw();
 }
 
-function touchStarted() {
-	mandelbrotUpdate();
-}
+// function touchStarted() {
+// 	mandelbrotUpdate();
+// }
 
-function mousePressed() {
-	mandelbrotUpdate();
-}
+// function mousePressed() {
+// 	mandelbrotUpdate();
+// }
+
+
 
 function reset() {
 	
@@ -119,6 +127,10 @@ function reset() {
 	decrementValueY = 1
 	newCanvasHeight = document.getElementById("canvas-height").value;
 	newCanvasWidth = document.getElementById("canvas-width").value;
+	console.log(newCanvasWidth)
+	document.getElementById("defaultCanvas0").style.width = "700px" // window.innerWidth + "px";
+	document.getElementById("defaultCanvas0").style.height = newCanvasHeight + "px"//window.innerHeight + "px";
+	console.log(document.getElementById("defaultCanvas0").style.width)
 	xUpperRange = newCanvasWidth / 100;
 	xLowerRange = -newCanvasWidth / 100;
 	yUpperRange = newCanvasHeight / 100;
@@ -182,7 +194,7 @@ function pan() {
 }
 
 function downloadPNG(i) {
-	var documentName = document.getElementById("downloadName").value + i;
+	var documentName = document.getElementById("downloadName").value;
 	saveCanvas(documentName, 'png');
 }
 
