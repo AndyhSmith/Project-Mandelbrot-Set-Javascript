@@ -30,7 +30,7 @@ input {
 #container-left-bar {
     position: fixed;
     background-color: rgb(35,35,35);
-    padding-top: 0px;
+    padding-top: 50px;
     width: 60px;
     height: 100%;
     top: 0px;
@@ -62,20 +62,6 @@ input {
     color: rgb(203,203,203);
 }
 
-#container-advanced {
-    position: fixed;
-    top: 20%;
-    left: 10%;
-    width: 80%;
-    height: 60%;
-    background-color:rgb(66,66,66);
-    display: none;
-    border-radius: 10px;
-    text-align: center;
-    padding: 20px;
-    font-size: 20px;
-    color: white;
-}
 
 #defaultCanvas0 {
     cursor: crosshair;
@@ -149,4 +135,100 @@ input {
 	color: black;
 }
 
+/* Advanced Settings Options */
 
+#settings-dark-background {
+    background-color: rgba(0,0,0,.3);
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 0;
+}
+
+
+
+#info-content {
+    background-color: white;
+    font-size: 18px;
+    height: 80%;
+    left: 50%;
+    max-height: 500px;
+    max-width: 600px;
+    min-width: 250px;
+    padding-left: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+
+#info-close {
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    color: black;
+    display: inline-block;
+    font-weight: bold;
+    padding: 10px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 50px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+#info-close:hover {
+    background-color: #ccc;
+}
+
+
+/* Info Options */
+
+
+#info-dark-background {
+    background-color: rgba(0,0,0,.3);
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+#info-content {
+    background-color: white;
+    font-size: 18px;
+    height: 80%;
+    left: 50%;
+    max-height: 500px;
+    max-width: 600px;
+    min-width: 250px;
+    padding-left: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+#info-close {
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    padding: 10px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 50px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+#info-close:hover {
+    background-color: #ccc;
+}

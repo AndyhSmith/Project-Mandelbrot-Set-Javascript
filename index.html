@@ -13,10 +13,31 @@
 	
 	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 	<script src="https://kit.fontawesome.com/68a99d09f4.js" crossorigin="anonymous"></script>
-	<link type="text/css" rel="stylesheet" href="index.css"></link>
+	<link type="text/css" rel="stylesheet" href="update.css"></link>
 </head>
 
 <body>
+<!-- Information -->
+	<div id="info-dark-background">
+		<div id="info-content">
+			<div id="info-close" onclick="infoToggle()">&times;</div>
+			<h1>JS Mandelbrot Generator</h1>
+			<p> The Mandelbrot set is a set of complex numbers rendered into a fractal image. 
+			</p>
+			<p>
+				<b>Directions:</b> Click or tap on the fractal image to zoom in on a location.
+			</p>
+			<p>
+				<b>Itterations:</b> A higher value will increase fractal detail at the cost of speed.
+			</p>
+			<p>
+				<i>I used <a href="https://p5js.org/">p5.js</a> to help display pixels.</i><br>
+				<i>Copyright © Andy Smith 2021</i>
+			</p>
+		</div>
+	</div>
+
+	<!-- <h1>Mandelbrot Generator</h1> -->
 	<div id="center">
 		<script src="projectMandelbrot.js" async></script>
 		<script src="p5/p5.js"></script>
@@ -26,17 +47,18 @@
 	<div id="container-iterations">
 		<span id="small-text">Iterations:</span>
 		<input type="text" id="numberOfIterations" value="100">  
-		<span><button  onclick="refresh()" style="color:white; height: 40px; width: 40px; font-size: 15px; margin-top: -10px;" class="fas fa-redo-alt"></button></span>
+		<!-- <span><button  onclick="refresh()" style="color:white; height: 40px; width: 40px; font-size: 15px; margin-top: -10px;" class="fas fa-redo-alt"></button></span> -->
+		<div class="tooltip" onclick="refresh()">
+			<i class="fas fa-redo-alt" style="font-size: 20px;;"></i>
+			<span class="tooltiptext">Reset</span>
+		</div>
 		&nbsp;&nbsp;| &nbsp;&nbsp;
 		<span id="small-text">Filename:</span>   
 		<input type="text" id="downloadName" value="Mandelbrot">
 	</div>
-
+	<br>
 	<div id="container-left-bar">
-		<a href="https://andyhsmith.com" class="noStyleLink"><div class="tooltip">
-			<span>◄</span>
-			<span class="tooltiptext">andyhsmith.com</span>
-		</div></a>
+		
 		<div class="tooltip" onclick="reset()">
 			<i class="fas fa-power-off"></i>
 			<span class="tooltiptext">Reset</span>
@@ -65,44 +87,52 @@
 			<i class="fas fa-arrow-down"></i>
 			<span class="tooltiptext">Download</span>
 		</div>
-		<div class="tooltip" onclick="showAdvanced()">
+		<div class="tooltip" onclick="toggleSettings()">
 			<i class="fas fa-sliders-h"></i>
 			<span class="tooltiptext">Settings</span>
 		</div>
+		<div class="tooltip" onclick="infoToggle()">
+			<i class="far fa-question-circle"></i>
+			<span class="tooltiptext">Help</span>
+		</div>
+		<a href="https://andyhsmith.com" class="noStyleLink"><div class="tooltip">
+			<span>◄</span>
+			<span class="tooltiptext">andyhsmith.com</span>
+		</div></a>
 	</div>	
 
 
-	
-	<div id="container-advanced">
-		<button onclick="hideAdvanced()">
-			CLOSE
-		</button>
-	
-		<br>
+	<div style="display:none" id="settings-dark-background">
+		<div id="info-content">
+			<div id="info-close" onclick="toggleSettings()">&times;</div>
 		
-		The animator will zoom in or out of the center of the mandelbrot scene using the zoom amount specified below.<br>
-		<br>
-		<span style="color:rgb(174,132,33)">Make sure you have zoom in/out selected on the left bar. </span><br>
-		
-		Zoom Amount
-		<input type="text" id="zoomAmount" value="2">
-		<br>
-		Animation Frames
-		<input type="text" id="animationFrames" value="3"> 
-		<br>
-		Animation Progress
-		<input type="text" id="animationProgress" value="N/A" readonly>
-		<br>
-		
-		<span style="color:rgb(174,132,33)">Once the animation process has begun currently the only way to stop it is to refresh or close the page. </span><br>
-		<button class="psb" onclick="animateZoom()">Animate</button><br>
+			<br>
 			
-		<br>
-		Canvas Width 
-		<input type="text" id="canvas-width" value="500">
-		Canvas Height 
-		<input type="text" id="canvas-height" value="500">
+			The animator will zoom in or out of the center of the mandelbrot scene using the zoom amount specified below.<br>
+			<br>
+			<span style="color:rgb(174,132,33)">Make sure you have zoom in/out selected on the left bar. </span><br>
+			
+			Zoom Amount
+			<input type="text" id="zoomAmount" value="2">
+			<br>
+			Animation Frames
+			<input type="text" id="animationFrames" value="3"> 
+			<br>
+			Animation Progress
+			<input type="text" id="animationProgress" value="N/A" readonly>
+			<br>
+			
+			<span style="color:rgb(174,132,33)">Once the animation process has begun currently the only way to stop it is to refresh or close the page. </span><br>
+			<button class="psb" onclick="animateZoom()">Animate</button><br>
+				
+			<br>
+			Canvas Width 
+			<input type="text" id="canvas-width" value="500">
+			Canvas Height 
+			<input type="text" id="canvas-height" value="500">
+		</div>
 	</div>
+
 
 	
 	

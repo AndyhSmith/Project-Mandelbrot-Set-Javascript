@@ -1,0 +1,141 @@
+#defaultCanvas0 {
+    display:inline;
+    cursor: crosshair;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+body {
+    margin: 0px;
+    text-align: center;
+    background-color: rgb(241,241,241);
+}
+
+input {
+    height: 20px;
+}
+
+.small-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Info Options */
+
+
+#info-dark-background {
+    background-color: rgba(0,0,0,.3);
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+#info-content {
+    background-color: white;
+    font-size: 18px;
+    height: 80%;
+    left: 50%;
+    max-height: 500px;
+    max-width: 600px;
+    min-width: 250px;
+    padding-left: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+#info-close {
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    padding: 10px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 50px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+#info-close:hover {
+    background-color: #ccc;
+}
+
+/* TOOLTIP */
+
+.tooltip {
+    position: relative;
+    margin-top: 5px;
+    margin-left: 5px;
+    /* background-color:rgb(43,43,43); */
+    display: inline;
+    padding: 5px;
+    color: rgb(195,195,195);
+    font-size: 40px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.tooltip:hover {
+    /* background-color: rgb(66,66,66); */
+    color: black;
+}
+
+.tooltiptext {
+    position: relative;
+    font-size: 20px;
+    /* background-color: lightgrey; */
+    z-index: 4;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    max-width: 300px;
+    /* background-color: black; */
+    /* color: #fff; */
+    background-color: rgba(200,200,200,.8);
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 3;
+    top: -5px;
+    left: 105%;
+  }
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+.noStyleLink {
+	text-decoration: none;
+}
+
+.noStyleLink:link {
+	color: black;
+}
+
+.noStyleLink:visited {
+	color: black;
+}
+
+.noStyleLink:hover {
+	color: black;
+}
+
+.noStyleLink:active {
+	color: black;
+}

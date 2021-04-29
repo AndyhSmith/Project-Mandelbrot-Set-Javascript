@@ -55,9 +55,9 @@ function setup() {
 	newCanvasWidth = document.getElementById("canvas-width").value;
 	document.getElementById("defaultCanvas0").style.width = newCanvasWidth + "px"// window.innerWidth + "px";
 	document.getElementById("defaultCanvas0").style.height = newCanvasHeight + "px" //window.innerHeight + "px";
-	document.getElementById("defaultCanvas0").style.position = "fixed";
-	document.getElementById("defaultCanvas0").style.left = "50px";
-	document.getElementById("defaultCanvas0").style.top = "0px";
+	// document.getElementById("defaultCanvas0").style.position = "fixed";
+	// document.getElementById("defaultCanvas0").style.left = "50px";
+	// document.getElementById("defaultCanvas0").style.top = "0px";
 	console.log(document.getElementById("defaultCanvas0"));
 	document.getElementById("defaultCanvas0").addEventListener("click", mandelbrotUpdate);
 	// $("#defaultCanvas0").css({ 'height': "720px" });
@@ -66,8 +66,9 @@ function setup() {
 
 function mandelbrotUpdate() {
 	
-	if ((mouseX > 50) && (mouseX < newCanvasWidth + 50) && (mouseY > 50) && (mouseY < newCanvasHeight + 50) && !showAdvancedToggle) {
+	if (!showAdvancedToggle) {
 		console.log("MouseX:" + mouseX)
+		console.log("MouseY:" + mouseY)
 		console.log("newCanvasWidth:" + newCanvasWidth)
 		xPos = map(mouseX, 0, width, xLowerRange, xUpperRange );
 		yPos = map(mouseY, 0, height, yLowerRange, yUpperRange );
@@ -278,12 +279,20 @@ function draw() {
 }
 
 
-function hideAdvanced() {
-	document.getElementById("container-advanced").style.display = "none";
-	showAdvancedToggle = false;
+function toggleSettings() {
+	var x = document.getElementById("settings-dark-background");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
 }
 
-function showAdvanced() {
-	document.getElementById("container-advanced").style.display = "block";
-	showAdvancedToggle = true;
+function infoToggle() {
+    var x = document.getElementById("info-dark-background");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
 }
